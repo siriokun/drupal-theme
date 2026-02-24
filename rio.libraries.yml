@@ -1,0 +1,12 @@
+base:
+  version: VERSION
+  css:
+    component:
+      custom.css:
+        weight: -10
+# dialog:
+#   version: VERSION
+#   css:
+#     component:
+#       css/components/dialog.css:
+#         weight: -10
