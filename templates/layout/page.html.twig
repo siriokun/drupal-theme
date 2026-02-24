@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override to display a single page.
+ * Theme override to display a front page.
  *
  * The doctype, html, head and body tags are not in this template. Instead they
  * can be found in the html.html.twig template in this directory.
@@ -44,44 +44,30 @@
 #}
 <div class="layout-container">
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
+  {{ include('@rio/components/hero/hero.twig') }}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
-
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
-
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
-  </main>
-
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-8">
+          <h3>{{ title }}</h3>
+          <div class="p-5">
+            {{ content }}
+          </div>
+        </div>
+        <div class="col-md-4">
+        <h3>Related Events/News</h3>
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ theme_url }}themes/rio/screenshot.png" class="card-img-top" alt="Article Three">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold mb-3">Article One</h3>
+              <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <a href="#" class="btn btn-outline-primary">Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </div>{# /.layout-container #}

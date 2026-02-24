@@ -44,40 +44,7 @@
 #}
 <div class="layout-container">
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
-
-  {# Hero Section #}
-  <section class="hero-section py-5 bg-light">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-12 text-center">
-          <h1 class="display-4 fw-bold mb-4">Welcome to Vox Teneo</h1>
-                    
-          <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8">
-              <form action="/search" method="get" class="d-flex gap-2">
-                <input 
-                  type="search" 
-                  name="keys" 
-                  class="form-control form-control-lg" 
-                  placeholder="Example: Website, Mobile App" 
-                  aria-label="Search"
-                  required
-                />
-                <button type="submit" class="btn btn-primary btn-lg px-4">
-                  Search
-                </button>
-              </form>
-            </div>
-          </div>
-          <h2 class="lead mt-4">We create effective solutions</h2>
-
-        </div>
-      </div>
-    </div>
-  </section>
+  {{ include('@rio/components/hero/hero.twig') }}
 
   <section class="py-5">
     <div class="container">

@@ -1,0 +1,19 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Hero
+status: experimental
+description: 'Hero section with title, subtitle, image, and search form slots.'
+slots:
+  title:
+    title: Title
+    description: 'The main heading of the hero section.'
+  subtitle:
+    title: Subtitle
+    description: 'A supporting line of text beneath the title.'
+  image:
+    title: Image
+    type: image
+    description: 'Background or featured image for the hero section.'
+  search_placeholder:
+    title: Search Placeholder
+  search_label:
+    title: Search Label

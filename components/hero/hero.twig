@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Hero component template.
+ *
+ * Slots:
+ * - title: The main heading of the hero section.
+ * - subtitle: A supporting line of text beneath the title.
+ * - image: Background or featured image for the hero section.
+ * - search_form: A search form rendered inside the hero section.
+ */
+#}
+<header role="banner" class="py-5"{% if image %} style="background-image: url({{ image }})"{% endif %}>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-12 text-center">
+        <h1 class="display-4 fw-bold mb-4">{{ title | default('Hero Title') }}</h1>
+                  
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <form action="/search" method="get" class="d-flex gap-2">
+              <input 
+                type="search" 
+                name="keys" 
+                class="form-control form-control-lg" 
+                placeholder="{{ search_placeholder | default('Type your keyword') }}" 
+                aria-label="Search"
+                required
+              />
+              <button type="submit" class="btn btn-primary btn-lg px-4">
+                {{ search_label | default('Search') }}
+              </button>
+            </form>
+          </div>
+        </div>
+        <h2 class="lead mt-4">{{ subtitle | default('Hero Subtitle') }}</h2>
+
+      </div>
+    </div>
+  </div>
+</header>
