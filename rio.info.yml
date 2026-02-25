@@ -1,7 +1,6 @@
 regions:
-  footer: Footer
-  header: Header
   content: Content
+  sidebar: Sidebar
 name: rio
 type: theme
 'base theme': stable9
