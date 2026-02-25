@@ -41,13 +41,12 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-md-8">
-          <h3>{{ title }}</h3>
           <div class="p-5">
-            {{ content }}
+            {{ page.content }}
           </div>
         </div>
         <div class="col-md-4">
-          {% if page.sidebar is not empty %}
+          {% if page.sidebar is empty %}
           <h3>Related Events/News</h3>
           <div class="card h-100 border-0 shadow-sm">
             <img src="{{ theme_url }}themes/rio/screenshot.png" class="card-img-top" alt="Article Three">
@@ -57,6 +56,8 @@
               <a href="#" class="btn btn-outline-primary">Detail</a>
             </div>
           </div>
+          {% else %}
+            {{ page.sidebar }}
           {% endif %}
         </div>
       </div>
